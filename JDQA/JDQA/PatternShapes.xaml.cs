@@ -138,7 +138,7 @@ namespace JDQA
                 {
                     int xKey = i + 1;
                     shapeDictionary["X"].Add(xKey, new Dictionary<int, int>());
-                    List<TextBox> xTextBoxList = zTextBoxLists[i];
+                    List<TextBox> xTextBoxList = xTextBoxLists[i];
 
                     for (int j = 0; j < xTextBoxList.Count; j++)
                     {

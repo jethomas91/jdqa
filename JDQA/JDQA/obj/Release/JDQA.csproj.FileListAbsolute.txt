@@ -20,3 +20,25 @@ C:\Users\Jet\documents\visual studio 2015\Projects\JDQA\JDQA\obj\Release\JDQA.cs
 C:\Users\Jet\documents\visual studio 2015\Projects\JDQA\JDQA\obj\Release\JDQA.exe
 C:\Users\Jet\documents\visual studio 2015\Projects\JDQA\JDQA\obj\Release\JDQA.pdb
 C:\Users\Jet\documents\visual studio 2015\Projects\JDQA\JDQA\obj\Release\JDQA.csprojResolveAssemblyReference.cache
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\bin\Release\JDQA.exe.config
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.exe
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.pdb
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\bin\Release\JDQA.exe
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\bin\Release\JDQA.pdb
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.csprojResolveAssemblyReference.cache
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQAHome.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQAResultsPage.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQASplash.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\MainWindow.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\PatternShapes.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\App.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA_MarkupCompile.cache
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA_MarkupCompile.lref
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQAHome.baml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQAResultsPage.baml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQASplash.baml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\MainWindow.baml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\PatternShapes.baml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.g.resources
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.Properties.Resources.resources
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.csproj.GenerateResource.Cache
