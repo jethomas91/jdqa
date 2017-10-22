@@ -42,3 +42,5 @@ C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\PatternShapes.baml
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.g.resources
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.Properties.Resources.resources
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.csproj.GenerateResource.Cache
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\Results.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\Results.baml

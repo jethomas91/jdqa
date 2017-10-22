@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace JDQA
 {
     /// <summary>
@@ -58,7 +57,6 @@ namespace JDQA
             _nextDictionary.Add(z3_5, z3_6);
             _nextDictionary.Add(z3_6, z3_7);
             _nextDictionary.Add(z3_7, z3_8);
-            _nextDictionary.Add(z3_8, x1_1);
 
             _nextDictionary.Add(x1_1, x1_2);
             _nextDictionary.Add(x1_2, x1_3);
@@ -89,23 +87,22 @@ namespace JDQA
 
         private Dictionary<string, Dictionary<int, Dictionary<int, int>>> createShapeDictionary() {
         Dictionary<string, Dictionary<int, Dictionary<int, int>>> shapeDictionary;
-        List<TextBox> z1TextBoxes, z2TextBoxes, z3TextBoxes, x1TextBoxes, x2TextBoxes, x3Textboxes;
         List<List<TextBox>> zTextBoxLists, xTextBoxLists;
 
             shapeDictionary = new Dictionary<string, Dictionary<int, Dictionary<int, int>>>();
+            IEnumerable<StackPanel> zStackList = ZStack.Children.OfType<StackPanel>();
+            IEnumerable<StackPanel> xStackList = XStack.Children.OfType<StackPanel>();
 
-            zTextBoxLists = new List<List<TextBox>>() {
-                z1.Children.OfType<TextBox>().ToList(),
-                z2.Children.OfType<TextBox>().ToList(),
-                z3.Children.OfType<TextBox>().ToList()
-            };
+            zTextBoxLists = new List<List<TextBox>>() {};
+            xTextBoxLists = new List<List<TextBox>>() {};
 
-            xTextBoxLists = new List<List<TextBox>>() {
-
-                x1.Children.OfType<TextBox>().ToList(),
-                x2.Children.OfType<TextBox>().ToList(),
-                x3.Children.OfType<TextBox>().ToList(),
-            };
+            foreach (StackPanel zStack in zStackList) {
+                zTextBoxLists.Add(zStack.Children.OfType<TextBox>().ToList());
+            }
+            foreach (StackPanel xStack in xStackList)
+            {
+                xTextBoxLists.Add(xStack.Children.OfType<TextBox>().ToList());
+            }
 
             shapeDictionary.Add("Z", new Dictionary<int, Dictionary<int, int>>());
             shapeDictionary.Add("X", new Dictionary<int, Dictionary<int, int>>());
@@ -172,17 +169,126 @@ namespace JDQA
 
         }
 
-        private List<PatternShapeModel> getPatternShapeModels() {
-
-            List<PatternShapeModel> patternshapeList = new List<PatternShapeModel>();
-
-
-            return patternshapeList;
-        }
 
         private void calculateCorrelation(object sender, RoutedEventArgs e)
         {
             Dictionary<string, Dictionary<int, Dictionary<int, int>>> shapeDictionary =  createShapeDictionary();
+
+            if (shapeDictionary != null)
+            {
+                Results results = new Results(PatternShapeModel.getPatternShapeModels(shapeDictionary));
+
+                NavigationService.Navigate(results);
+            }
+            
+        }
+
+        private void addPattern(object sender, RoutedEventArgs e)
+        {
+            Button curButton = sender as Button;
+            StackPanel groupStack = (StackPanel)this.FindName(curButton.Name == "addZGroup" ? "ZStack" : "XStack");
+
+            Dictionary<string, StackPanel> groupsDictionary = new Dictionary<string, StackPanel>();
+            List<StackPanel> patternShapeInputs = patternShapeParentGrid.Children.OfType<StackPanel>().ToList();
+
+            string groupPrefix = curButton.Name == "addZGroup" ? "z" : "x";
+
+
+            StackPanel iteratedPanel = (StackPanel)this.FindName(groupPrefix+"1");
+            int groupIndexCounter = 1;
+
+            while (iteratedPanel != null) {
+
+                iteratedPanel = (StackPanel)this.FindName(groupPrefix+""+groupIndexCounter);
+                groupIndexCounter = iteratedPanel == null ? groupIndexCounter: groupIndexCounter+1;
+            }
+
+            StackPanel newShape = new StackPanel();
+            NameScope.SetNameScope(newShape, new NameScope());
+
+            newShape.Name = groupPrefix + "" + groupIndexCounter;
+            newShape.Orientation = Orientation.Horizontal;
+            Thickness newMargin = newShape.Margin;
+            newMargin.Left = 0;
+            newMargin.Top = 0;
+            newMargin.Bottom = 0;
+            newMargin.Right = 0;
+
+            newShape.Margin = newMargin;
+            TextBox[] shapeTextBoxes = new TextBox[8];
+            Label[] shapeDelimiters = new Label[7];
+
+            shapeDelimiters[0] = new Label();
+            shapeDelimiters[0].Content = "-";
+
+            shapeDelimiters[1] = new Label();
+            shapeDelimiters[1].Content = "-";
+
+            shapeDelimiters[2] = new Label();
+            shapeDelimiters[2].Content = ".";
+
+            shapeDelimiters[3] = new Label();
+            shapeDelimiters[3].Content = "-";
+
+            shapeDelimiters[4] = new Label();
+            shapeDelimiters[4].Content = ".";
+
+            shapeDelimiters[5] = new Label();
+            shapeDelimiters[5].Content = "-";
+
+            shapeDelimiters[6] = new Label();
+            shapeDelimiters[6].Content = ".";
+
+            for (int i = 0; i <= 7; i++) {
+                shapeTextBoxes[i] = new TextBox();
+                shapeTextBoxes[i].Name = String.Format("{0}_{1}", newShape.Name, i + 1);
+                shapeTextBoxes[i].KeyDown += moveIfMaxLength;                
+                    }
+
+            shapeTextBoxes[0].Width = 50;
+            shapeTextBoxes[0].MaxLength = 4;
+
+            shapeTextBoxes[1].Width = 25;
+            shapeTextBoxes[1].MaxLength = 2;
+
+            shapeTextBoxes[2].Width = 15;
+            shapeTextBoxes[2].MaxLength = 1;
+
+            shapeTextBoxes[3].Width = 20;
+            shapeTextBoxes[3].MaxLength = 2;
+
+            shapeTextBoxes[4].Width = 15;
+            shapeTextBoxes[4].MaxLength = 1;
+
+            shapeTextBoxes[5].Width = 20;
+            shapeTextBoxes[5].MaxLength = 2;
+
+            shapeTextBoxes[6].Width = 15;
+            shapeTextBoxes[6].MaxLength = 1;
+
+            shapeTextBoxes[7].Width = 20;
+            shapeTextBoxes[7].MaxLength = 2;
+
+            TextBox lastTextboxInGroup = (TextBox)groupStack.FindName(String.Format("{0}{1}_{2}", groupPrefix, groupIndexCounter - 1,8));
+
+            for (int i = 0; i <= 7; i++)
+            {
+                groupStack.RegisterName(shapeTextBoxes[i].Name, shapeTextBoxes[i]);
+                newShape.Children.Add(shapeTextBoxes[i]);
+                if (i == 0)
+                {
+                    _nextDictionary[lastTextboxInGroup] = shapeTextBoxes[i];
+                }
+                else {
+                    _nextDictionary.Add(shapeTextBoxes[i - 1], shapeTextBoxes[i]);
+                }
+                if (i < shapeDelimiters.Count()) {
+                    newShape.Children.Add(shapeDelimiters[i]);
+                }
+            }
+
+            groupStack.RegisterName(newShape.Name, newShape);
+            groupStack.Children.Add(newShape);
         }
 
     }
