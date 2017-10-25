@@ -16,9 +16,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Name="IdealJDQAText"/>
         <StackPanel Name="ZResults" Grid.Row="1" Grid.Column="0"/>
         <StackPanel Name="XResults" Grid.Row="1" Grid.Column="1"/>
+        <StackPanel Name="CalculatedValues" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0"></StackPanel>
     </Grid>
 </Page>

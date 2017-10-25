@@ -36,22 +36,15 @@ namespace JDQA
             double[] idealJDQA = calculateIdealJDQA(Z);
             IdealJDQAText.Content = string.Format("Ideal Pattern Shape: [{0},{1},{2},{3}]", idealJDQA[0], idealJDQA[1], idealJDQA[2], idealJDQA[3]);
 
-            List<double> zRValueList = new List<double>();
-            List<double> xRValueList = new List<double>();
-
-            // double z1_r = calculateR(sliceCQ(Z[0].PS), idealJDQA);
-            // double z2_r = calculateR(sliceCQ(Z[1].PS), idealJDQA);
-            // double z3_r = calculateR(sliceCQ(Z[2].PS), idealJDQA);
-            //
-            // double x1_r = calculateR(sliceCQ(X[0].PS), idealJDQA);
-            // double x2_r = calculateR(sliceCQ(X[1].PS), idealJDQA);
-            // double x3_r = calculateR(sliceCQ(X[2].PS), idealJDQA);
+            List<ConvertedScoreRow> zConvertedScores = new List<ConvertedScoreRow>();
+            List<ConvertedScoreRow> xConvertedScores = new List<ConvertedScoreRow>();
 
             for (int i = 0; i < Z.Count(); i++) {
                 double r = calculateR(sliceCQ(Z[i].PS), idealJDQA);
-                zRValueList.Add(r);
                 int modifiedR = (int)Math.Round(r * 100, MidpointRounding.AwayFromZero);
-                double convertedScore = scoreTable.ConversionRows[modifiedR].Score;
+                ConvertedScoreRow zScoreRow = scoreTable.ConversionRows[modifiedR];
+                zConvertedScores.Add(zScoreRow);
+                double convertedScore = zScoreRow.Score;
                 Label zLabel = new Label();
                 zLabel.Content = string.Format("z{0} R Value: {1} Converted Score: {2}",i+1, Math.Round(r,2), convertedScore);
 
@@ -62,15 +55,83 @@ namespace JDQA
             for (int i = 0; i < X.Count(); i++)
             {
                 double r = calculateR(sliceCQ(X[i].PS), idealJDQA);
-                xRValueList.Add(r);
+                int modifiedR = (int)Math.Round(r * 100, MidpointRounding.AwayFromZero);
+                ConvertedScoreRow xScoreRow = scoreTable.ConversionRows[modifiedR];
+                xConvertedScores.Add(xScoreRow);
+                double convertedScore = xScoreRow.Score;
                 Label xLabel = new Label();
-                xLabel.Content = String.Format("x{0} R Value: {1}", i + 1, Math.Round(r,2));
+                xLabel.Content = String.Format("x{0} R Value: {1} Converted Score: {2}", i + 1, Math.Round(r,2), convertedScore);
 
                 XResults.Children.Add(xLabel);
 
             }
 
+            double c = zConvertedScores.Sum(z => z.Score);
 
+            Label cLabel = new Label();
+            cLabel.Content = String.Format("c value: {0}", c);
+            CalculatedValues.Children.Add(cLabel);
+
+            double x1 = c / zConvertedScores.Count();
+            Label x1Label = new Label();
+            x1Label.Content = String.Format("x1 value: {0}", Math.Round(x1,2,MidpointRounding.AwayFromZero));
+            CalculatedValues.Children.Add(x1Label);
+
+
+            double d = xConvertedScores.Sum(x => x.Score);
+            Label dLabel = new Label();
+            dLabel.Content = String.Format("d value: {0}",d);
+            CalculatedValues.Children.Add(dLabel);
+
+            double x2 = d/xConvertedScores.Count();
+
+            Label x2Label = new Label();
+            x2Label.Content = String.Format("x2 value: {0}", Math.Round(x2,2,MidpointRounding.AwayFromZero));
+            CalculatedValues.Children.Add(x2Label);
+
+            double a = zConvertedScores.Sum(z=>z.Score*z.Score);
+
+            Label aLabel = new Label();
+            aLabel.Content = String.Format("a value: {0}",a);
+            CalculatedValues.Children.Add(aLabel);
+
+            double b = xConvertedScores.Sum(x => x.Score * x.Score);
+
+            Label bLabel = new Label();
+            bLabel.Content = String.Format("b value: {0}", b);
+            CalculatedValues.Children.Add(bLabel);
+
+            double n1 = xConvertedScores.Count();
+            Label n1Label = new Label();
+            n1Label.Content = String.Format("n1 value: {0}", n1);
+            CalculatedValues.Children.Add(n1Label);
+
+            double n2 = xConvertedScores.Count();
+            Label n2Label = new Label();
+            n2Label.Content = String.Format("n2 value: {0}", n2);
+            CalculatedValues.Children.Add(n2Label);
+
+            double S = (a - ((c * c) / n1)) + (b - ((d * d) / n2));
+            Label sLabel = new Label();
+            sLabel.Content = String.Format("S value: {0}", Math.Round(S,2,MidpointRounding.AwayFromZero));
+            CalculatedValues.Children.Add(sLabel);
+
+            double R = Math.Sqrt((S / ((n1 + n2) - 2)) * ((1 / n1) + (1 / n2)));
+            Label rLabel = new Label();
+            rLabel.Content = String.Format("R value: {0}", Math.Round(R,2,MidpointRounding.AwayFromZero));
+            CalculatedValues.Children.Add(rLabel);
+
+            double T = (x1 - x2) / R;
+            Label tLabel = new Label();
+            tLabel.Content = String.Format("T value: {0}", Math.Round(T,2,MidpointRounding.AwayFromZero));
+            CalculatedValues.Children.Add(tLabel);
+
+            double df = n1 + n2 - 2;
+            Label dfLabel = new Label();
+            dfLabel.Content = String.Format("df value: {0}", Math.Round(df,2,MidpointRounding.AwayFromZero));
+            CalculatedValues.Children.Add(dfLabel);
+
+           
 
         }
 
