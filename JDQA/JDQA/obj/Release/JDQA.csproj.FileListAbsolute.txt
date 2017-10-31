@@ -66,3 +66,5 @@ C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.Properties.Resou
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.csproj.GenerateResource.Cache
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.exe
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.pdb
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\Results.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\Results.baml

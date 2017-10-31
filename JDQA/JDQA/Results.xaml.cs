@@ -33,7 +33,7 @@ namespace JDQA
             List<PatternShapeModel> X = patternShapes["X"];
             ConvertedScoreTable scoreTable = new ConvertedScoreTable();
 
-            double[] idealJDQA = calculateIdealJDQA(Z);
+            int[] idealJDQA = calculateIdealJDQA(Z);
             IdealJDQAText.Content = string.Format("Ideal Pattern Shape: [{0},{1},{2},{3}]", idealJDQA[0], idealJDQA[1], idealJDQA[2], idealJDQA[3]);
 
             List<ConvertedScoreRow> zConvertedScores = new List<ConvertedScoreRow>();
@@ -101,7 +101,7 @@ namespace JDQA
             bLabel.Content = String.Format("b value: {0}", b);
             CalculatedValues.Children.Add(bLabel);
 
-            double n1 = xConvertedScores.Count();
+            double n1 = zConvertedScores.Count();
             Label n1Label = new Label();
             n1Label.Content = String.Format("n1 value: {0}", n1);
             CalculatedValues.Children.Add(n1Label);
@@ -135,20 +135,61 @@ namespace JDQA
 
         }
 
-        private double[] calculateIdealJDQA(List<PatternShapeModel> Z)
+        private int[] calculateIdealJDQA(List<PatternShapeModel> Z)
         {
-            double[]ideal_jdqa;
-            ideal_jdqa = new double[4];
+            int[] ideal_jdqa;
+            ideal_jdqa = new int[4];
 
-            ideal_jdqa[0] = (Z.Sum(z=> sliceCQ(z.PS)[0])) / Z.Count;
-            ideal_jdqa[1] = (Z.Sum(z => sliceCQ(z.PS)[1])) / Z.Count;
-            ideal_jdqa[2] = (Z.Sum(z => sliceCQ(z.PS)[2])) / Z.Count;
-            ideal_jdqa[3] = (Z.Sum(z => sliceCQ(z.PS)[3])) / Z.Count;
+            ideal_jdqa[0] = (int)Math.Round((Z.Sum(z => sliceCQ(z.PS)[0])) / Z.Count, MidpointRounding.AwayFromZero);
+            ideal_jdqa[1] = (int)Math.Round((Z.Sum(z => sliceCQ(z.PS)[1])) / Z.Count, MidpointRounding.AwayFromZero);
+            ideal_jdqa[2] = (int)Math.Round((Z.Sum(z => sliceCQ(z.PS)[2])) / Z.Count, MidpointRounding.AwayFromZero);
+            ideal_jdqa[3] = (int)Math.Round((Z.Sum(z => sliceCQ(z.PS)[3])) / Z.Count, MidpointRounding.AwayFromZero);
 
+            int maxDiff = 0;
+            int maxIndex = 0;
+            bool altered = false;
+
+            for (int i = 0; i < ideal_jdqa.Count(); i++)
+            {
+                if (Math.Abs(5 - ideal_jdqa[i]) > maxDiff && ideal_jdqa[i] != 5)
+                {
+                    altered = true;
+                    maxDiff = Math.Abs(5 - ideal_jdqa[i]);
+                    maxIndex = i;
+                }
+            }
+
+            //for all 5s case
+            if (altered)
+            {
+                ideal_jdqa[maxIndex] = ideal_jdqa[maxIndex] < 5 ? 1 : 9;
+            }
+            //force 20
+            int iterations = 0;
+            while (ideal_jdqa.Sum() != 20 && iterations < 10)
+            {
+                Random random = new Random();
+
+                int randomIndex = random.Next(0, 4);
+                while (randomIndex == maxIndex)
+                {
+                    randomIndex = random.Next(0, 4);
+                }
+
+                int incrVal = ideal_jdqa.Sum() > 20 ? -1 : 1;
+
+                if (ideal_jdqa[randomIndex] != 5)
+                {
+                    ideal_jdqa[randomIndex] = ideal_jdqa[randomIndex] + incrVal;
+                }
+
+                iterations++;
+            }
+            int j = iterations;
             return ideal_jdqa;
         }
 
-        private double calculateR(double[] subject, double[] ideal) {
+        private double calculateR(double[] subject, int[] ideal) {
 
             double[,] multiplesAndSquares = getMultiplesAndSquares(subject, ideal);
             double x_sum = subject[0] + subject[1] + subject[2]+subject[3];
@@ -172,7 +213,7 @@ namespace JDQA
             }
         }
 
-        private double[,] getMultiplesAndSquares(double[] subject, double[] ideal)
+        private double[,] getMultiplesAndSquares(double[] subject, int[] ideal)
         {
             double[,] multiplesAndSquares = new double[4, 3];
 
