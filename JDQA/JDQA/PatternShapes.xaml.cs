@@ -242,7 +242,7 @@ namespace JDQA
             for (int i = 0; i <= 7; i++) {
                 shapeTextBoxes[i] = new TextBox();
                 shapeTextBoxes[i].Name = String.Format("{0}_{1}", newShape.Name, i + 1);
-                shapeTextBoxes[i].KeyDown += moveIfMaxLength;                
+                shapeTextBoxes[i].KeyUp += moveIfMaxLength;                
                     }
 
             shapeTextBoxes[0].Width = 50;

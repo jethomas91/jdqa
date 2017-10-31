@@ -30,13 +30,14 @@ namespace JDQA.Classes
     }
 
     public class DistributionTable {
-        private Dictionary<int, DistributionRow> _distributionRows;
+        public Dictionary<int, DistributionRow> _distributionRows;
 
         public DistributionTable() {
             initializeDistributionRows();
         }
 
         public void initializeDistributionRows() {
+            _distributionRows = new Dictionary<int, DistributionRow>();
             _distributionRows.Add(1, new DistributionRow(6.314,12.706,63.657,636.619));
             _distributionRows.Add(2, new DistributionRow(2.920,4.303,9.935,31.598));
             _distributionRows.Add(3, new DistributionRow(2.353, 4.303, 9.925, 31.598));
@@ -50,6 +51,9 @@ namespace JDQA.Classes
             _distributionRows.Add(10, new DistributionRow(1.812,2.228,3.169,4.587));
 
             _distributionRows.Add(11, new DistributionRow(1.796, 2.201, 3.106, 4.437));
+            _distributionRows.Add(12, new DistributionRow(1.782,2.179,3.055,4.318));
+            _distributionRows.Add(13, new DistributionRow(1.771,2.160,3.012,4.221));
+            _distributionRows.Add(0, new DistributionRow(1.645, 1.960, 2.576, 3.291));
 
             
 

@@ -101,12 +101,12 @@ namespace JDQA
             bLabel.Content = String.Format("b value: {0}", b);
             CalculatedValues.Children.Add(bLabel);
 
-            double n1 = zConvertedScores.Count();
+            int n1 = zConvertedScores.Count();
             Label n1Label = new Label();
             n1Label.Content = String.Format("n1 value: {0}", n1);
             CalculatedValues.Children.Add(n1Label);
 
-            double n2 = xConvertedScores.Count();
+            int n2 = xConvertedScores.Count();
             Label n2Label = new Label();
             n2Label.Content = String.Format("n2 value: {0}", n2);
             CalculatedValues.Children.Add(n2Label);
@@ -126,12 +126,16 @@ namespace JDQA
             tLabel.Content = String.Format("T value: {0}", Math.Round(T,2,MidpointRounding.AwayFromZero));
             CalculatedValues.Children.Add(tLabel);
 
-            double df = n1 + n2 - 2;
+            int df = n1 + n2 - 2;
             Label dfLabel = new Label();
-            dfLabel.Content = String.Format("df value: {0}", Math.Round(df,2,MidpointRounding.AwayFromZero));
+            dfLabel.Content = String.Format("df value: {0}", df);
             CalculatedValues.Children.Add(dfLabel);
 
-           
+            Label distributionLabel = new Label();
+            DistributionTable dTable = new DistributionTable();
+            DistributionRow dr = dTable._distributionRows.ContainsKey(df) ? dTable._distributionRows[df] : dTable._distributionRows[0];
+            distributionLabel.Content = String.Format("Distribution of Probability  0.1: {0}, 0.05: {1}, 0.01: {2}, 0.001:{3}", dr.PointOne, dr.PointZeroFive, dr.PointZeroOne, dr.PointZeroZeroOne);
+            CalculatedValues.Children.Add(distributionLabel);
 
         }
 
