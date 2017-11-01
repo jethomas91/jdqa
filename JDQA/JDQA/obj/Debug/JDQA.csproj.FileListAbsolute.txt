@@ -47,7 +47,6 @@ C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\Results.baml
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\bin\Debug\JDQA.exe.config
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\bin\Debug\JDQA.exe
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\bin\Debug\JDQA.pdb
-C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.csprojResolveAssemblyReference.cache
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQAHome.g.cs
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQAResultsPage.g.cs
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQASplash.g.cs

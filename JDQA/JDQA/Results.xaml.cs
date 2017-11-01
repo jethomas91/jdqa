@@ -101,12 +101,12 @@ namespace JDQA
             bLabel.Content = String.Format("b value: {0}", b);
             CalculatedValues.Children.Add(bLabel);
 
-            int n1 = zConvertedScores.Count();
+            double n1 = zConvertedScores.Count();
             Label n1Label = new Label();
             n1Label.Content = String.Format("n1 value: {0}", n1);
             CalculatedValues.Children.Add(n1Label);
 
-            int n2 = xConvertedScores.Count();
+            double n2 = xConvertedScores.Count();
             Label n2Label = new Label();
             n2Label.Content = String.Format("n2 value: {0}", n2);
             CalculatedValues.Children.Add(n2Label);
@@ -118,7 +118,7 @@ namespace JDQA
 
             double R = Math.Sqrt((S / ((n1 + n2) - 2)) * ((1 / n1) + (1 / n2)));
             Label rLabel = new Label();
-            rLabel.Content = String.Format("R value: {0}", Math.Round(R,2,MidpointRounding.AwayFromZero));
+            rLabel.Content = String.Format("R value: {0}", R);
             CalculatedValues.Children.Add(rLabel);
 
             double T = (x1 - x2) / R;
@@ -126,7 +126,7 @@ namespace JDQA
             tLabel.Content = String.Format("T value: {0}", Math.Round(T,2,MidpointRounding.AwayFromZero));
             CalculatedValues.Children.Add(tLabel);
 
-            int df = n1 + n2 - 2;
+            int df = (int)(n1 + n2 - 2);
             Label dfLabel = new Label();
             dfLabel.Content = String.Format("df value: {0}", df);
             CalculatedValues.Children.Add(dfLabel);
