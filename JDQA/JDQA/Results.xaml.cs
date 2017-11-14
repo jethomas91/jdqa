@@ -34,7 +34,7 @@ namespace JDQA
             ConvertedScoreTable scoreTable = new ConvertedScoreTable();
 
             int[] idealJDQA = calculateIdealJDQA(Z);
-            IdealJDQAText.Content = string.Format("Ideal Pattern Shape: [{0},{1},{2},{3}]", idealJDQA[0], idealJDQA[1], idealJDQA[2], idealJDQA[3]);
+            IdealJDQAText.Content = string.Format("Job Demands Quotient: {0}{1}{2}{3}", idealJDQA[0], idealJDQA[1], idealJDQA[2], idealJDQA[3]);
 
             List<ConvertedScoreRow> zConvertedScores = new List<ConvertedScoreRow>();
             List<ConvertedScoreRow> xConvertedScores = new List<ConvertedScoreRow>();
@@ -118,7 +118,8 @@ namespace JDQA
 
             double R = Math.Sqrt((S / ((n1 + n2) - 2)) * ((1 / n1) + (1 / n2)));
             Label rLabel = new Label();
-            rLabel.Content = String.Format("R value: {0}", R);
+            rLabel.Content = String.Format(@"COM value: {0}.  
+                Regarding individuals being considered for this position, any ITS Self Concept Pattern Shape with a compatibility (COM) of between .70 and 1.00 would be an excellent match from a behavioral stand point.  From .40 to .69 would be considered a good match; .10 to .39 a fair match and from -  (minus) 1.00 to + .09 a poor match.", R);
             CalculatedValues.Children.Add(rLabel);
 
             double T = (x1 - x2) / R;
@@ -134,8 +135,12 @@ namespace JDQA
             Label distributionLabel = new Label();
             DistributionTable dTable = new DistributionTable();
             DistributionRow dr = dTable._distributionRows.ContainsKey(df) ? dTable._distributionRows[df] : dTable._distributionRows[0];
-            distributionLabel.Content = String.Format("Distribution of Probability  0.1: {0}, 0.05: {1}, 0.01: {2}, 0.001:{3}", dr.PointOne, dr.PointZeroFive, dr.PointZeroOne, dr.PointZeroZeroOne);
-            CalculatedValues.Children.Add(distributionLabel);
+
+            string significanceStatement = getSignificanceStatement(dr, T);
+
+            Label significanceLabel = new Label();
+            significanceLabel.Content = significanceStatement;
+            CalculatedValues.Children.Add(significanceLabel);
 
         }
 
@@ -249,6 +254,31 @@ namespace JDQA
                 string cqString = cq.ToString();
                 return new double[] { double.Parse(cqString.Substring(0,1)), double.Parse(cqString.Substring(1,1)), double.Parse(cqString.Substring(2,1)), double.Parse(cqString.Substring(3,1))};
             }
+        }
+
+
+        private string getSignificanceStatement(DistributionRow dr, double tVal) {
+
+            if (tVal > dr.PointZeroZeroOne)
+            {
+                return DistributionTable.PointZeroZeroOneStatement;
+            }
+            else if (tVal > dr.PointZeroOne)
+            {
+                return DistributionTable.PointZeroOneStatement;
+            }
+            else if (tVal > dr.PointZeroFive)
+            {
+                return DistributionTable.PointZeroFiveStatement;
+            }
+            else if (tVal > dr.PointOne)
+            {
+                return DistributionTable.PointOneStatement;
+            }
+            else {
+                return DistributionTable.NoSignificanceStatement;
+            }
+
         }
     }
 }

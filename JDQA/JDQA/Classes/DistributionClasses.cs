@@ -32,6 +32,22 @@ namespace JDQA.Classes
     public class DistributionTable {
         public Dictionary<int, DistributionRow> _distributionRows;
 
+        public static string StatementTemplate{ get { return @"Level of Significance:{2}
+This data set reflects a{0} {1} level of statistical significance.
+This cause and effect in behavioral differences would occur 
+{3} times in {4} trials while chance would be the cause and effect in {5} time{6} in {4} trials."; } }
+
+        public static string PointZeroZeroOneStatement { get { return String.Format(StatementTemplate, 'n', "undoubtable, definite", "0.001", "999", "1000", "1", ""); } }
+
+        public static  string PointZeroOneStatement { get { return String.Format(StatementTemplate, "", "major", "0.01", "99", "100", "1", ""); } }
+
+        public static  string PointZeroFiveStatement { get { return String.Format(StatementTemplate, "", "very strong", "0.05", "95", "100", "5", "s"); } }
+
+        public static  string PointOneStatement { get { return String.Format(StatementTemplate, "", "moderate", "0.1", "9", "10", "1", ""); } }
+
+        public static  string NoSignificanceStatement { get { return @"A statistically significant correlation cannot be computed because of the available data.
+A more objective performance appraisal system is needed because the upper performers and lower performers share many of the same behavioral traits."; } }
+
         public DistributionTable() {
             initializeDistributionRows();
         }

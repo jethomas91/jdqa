@@ -5,5 +5,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JDQA"
         mc:Ignorable="d"
-        Title="JDQA" Height="Auto" MinHeight="300" SizeToContent="Height" Width="525" Source="JDQASplash.xaml">
+        Title="JDQA" Height="Auto" MinHeight="300" SizeToContent="WidthAndHeight"  MinWidth="525" Source="JDQASplash.xaml">
 </NavigationWindow>
