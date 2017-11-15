@@ -21,7 +21,7 @@
                 </Border.Background>
                 <TextBlock Foreground="White" TextWrapping="WrapWithOverflow" TextAlignment="Center" IsEnabled="False" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="20" FontWeight="Bold">Pattern Shape Analyzer v0.03.03</TextBlock>
             </Border>
-            <Button Margin="30" Name="enterButton" Click="enterApplication" KeyDown="enterKeyDown">Phase I</Button>
+            <Button Margin="30" Name="phase1Button" Click="enterPhase1" KeyDown="enterKeyDown">Phase I</Button>
             <Button Margin="30" Name="enterButton" Click="enterApplication" KeyDown="enterKeyDown">Phase II</Button>
         </StackPanel>
     </Grid>

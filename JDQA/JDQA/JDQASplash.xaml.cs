@@ -33,6 +33,13 @@ namespace JDQA
             NavigationService.Navigate(patternshapes);
         }
 
+        private void enterPhase1(object sender, RoutedEventArgs e) {
+            Phase_1 phase_1 = new Phase_1();
+
+            NavigationService.Navigate(phase_1);
+            
+        }
+
         private void enterKeyDown(object sender, KeyEventArgs e) {
             if (e.Key == Key.Return) {
                 PatternShapes patternshapes = new PatternShapes();

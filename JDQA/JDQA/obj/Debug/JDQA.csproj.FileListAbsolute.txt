@@ -67,3 +67,10 @@ C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.Properties.Resourc
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.csproj.GenerateResource.Cache
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.exe
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.pdb
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\phase_1.g.cs
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\phase_1.baml
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\bin\Debug\itextsharp.dll
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\bin\Debug\itextsharp.xml
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.csprojResolveAssemblyReference.cache
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm.g.cs
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm.baml
