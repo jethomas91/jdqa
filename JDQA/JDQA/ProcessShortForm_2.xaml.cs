@@ -62,5 +62,35 @@ namespace JDQA
 
             }
         }
+
+        private void goToNexStep(object sender, RoutedEventArgs e)
+        {
+            List<CheckBox> allCheckboxes = new List<CheckBox>();
+
+            allCheckboxes = checkRow1.Children.OfType<CheckBox>().ToList();
+
+            allCheckboxes = allCheckboxes.Concat(checkRow2.Children.OfType<CheckBox>().ToList()).ToList();
+            allCheckboxes = allCheckboxes.Concat(checkRow3.Children.OfType<CheckBox>().ToList()).ToList();
+            allCheckboxes = allCheckboxes.Concat(checkRow4.Children.OfType<CheckBox>().ToList()).ToList();
+            allCheckboxes = allCheckboxes.Concat(checkRow5.Children.OfType<CheckBox>().ToList()).ToList();
+            allCheckboxes = allCheckboxes.Concat(checkRow6.Children.OfType<CheckBox>().ToList()).ToList();
+
+            List<CheckBox> selectedBoxes = new List<CheckBox>();
+            foreach (CheckBox checkbox in allCheckboxes)
+            {
+
+                StackPanel parent = (StackPanel)checkbox.Parent;
+                parent.UnregisterName(checkbox.Name);
+                parent.Children.Remove(checkbox);
+                if (checkbox.IsChecked.GetValueOrDefault())
+                {
+                    checkbox.IsChecked = false;
+                    selectedBoxes.Add(checkbox);
+                }
+            }
+
+            ProcessShortForm_3 proc3 = new ProcessShortForm_3(selectedBoxes);
+            NavigationService.Navigate(proc3);
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Page x:Class="JDQA.ProcessShortForm_2"
+﻿<Page x:Class="JDQA.ProcessShortForm_3"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,18 +6,19 @@
       xmlns:local="clr-namespace:JDQA"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="ProcessShortForm_2">
+      Title="ProcessShortForm_3">
 
     <Grid Name="ShortFormGrid">
         <StackPanel>
-            <Label>Select the 10 Circled choices</Label>
+            <Label>Select the 1 darkened choice</Label>
             <StackPanel Orientation="Horizontal" Name="checkRow1"></StackPanel>
             <StackPanel Orientation="Horizontal" Name="checkRow2"></StackPanel>
             <StackPanel Orientation="Horizontal" Name="checkRow3"></StackPanel>
             <StackPanel Orientation="Horizontal" Name="checkRow4"></StackPanel>
             <StackPanel Orientation="Horizontal" Name="checkRow5"></StackPanel>
             <StackPanel Orientation="Horizontal" Name="checkRow6"></StackPanel>
-            <Button Click="goToNexStep" HorizontalAlignment="Right">Next Step</Button>
+            <Button Name="addMoreReuslts" HorizontalAlignment="Right" Margin="0,10,5,0">Add Another Form Result</Button>
+            <Button Name="processFormEntries" HorizontalAlignment="Right" Click="processFormResults" Margin="0,20,5,0">Calculate Ideal Pattern Shape</Button>
         </StackPanel>
     </Grid>
 </Page>

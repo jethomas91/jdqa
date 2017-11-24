@@ -25,7 +25,6 @@ C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.exe
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.pdb
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\bin\Debug\JDQA.exe
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\bin\Debug\JDQA.pdb
-C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.csprojResolveAssemblyReference.cache
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQAHome.g.cs
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQAResultsPage.g.cs
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQASplash.g.cs
@@ -76,3 +75,13 @@ C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm.g.cs
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm.baml
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_2.g.cs
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_2.baml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\bin\Debug\itextsharp.dll
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\bin\Debug\itextsharp.xml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\phase_1.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_2.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\phase_1.baml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm.baml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_2.baml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_3.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_3.baml

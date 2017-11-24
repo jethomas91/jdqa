@@ -45,22 +45,26 @@ namespace JDQA
                 doc.Open();
         
             //write file
-            doc.Add(new Paragraph("Position: __________________",times));
+            doc.Add(new Paragraph("Position Being Rated: __________________",times));
             doc.Add(new Paragraph("Your Name: __________________", times));
             doc.Add(new Paragraph("Your Title: __________________", times));
-            doc.Add(new Paragraph("Your Career Quotient: __________________", times));
             doc.Add(new Paragraph("Today's Date: __________________", times));
+
+                doc.Add(new Paragraph("Are you currently in this position? Yes___ No___"));
+                doc.Add(new Paragraph("Have you ever been in this position? Yes___ No___"));
+                doc.Add(new Paragraph("If No, do you manage this position? Yes___ No___"));
+            
 
             string formBody = "\r\n Instructions: (1) Place an <X> beside each statement that you feel is important " +
                 "in describing the above position.  (2) Then go back and circle the ten X's which you feel are the most important aspects of the " +
-                "above position. (3) Finally,  DARKEN THE CIRCLE OF THE SINGLE MOST IMPORTANT one \r\n\r\n ";
+                "above position. (3) Finally,  DARKEN THE CIRCLE OF THE SINGLE MOST IMPORTANT one. Every words in the statement should match the job requirements \r\n\r\n ";
             List options = new List(List.UNORDERED);
                 options.SetListSymbol("____ ");
             options.Add(new ListItem("1. Being good at meeting new people quite often.\r\n",times));
             options.Add(new ListItem("2. Sticking to established policies and procedures.\r\n",times));
             options.Add(new ListItem("3. Being cooperative with other people.\r\n",times));
-            options.Add(new ListItem("4. Working quickly on a variety of different tasks.\r\n",times));
-            options.Add(new ListItem("5. Being demanding of other people.\r\n",times));
+                options.Add(new ListItem("4. Being highly logical and analytical.\r\n"));
+            options.Add(new ListItem("5. Working quickly on a variety of different tasks.\r\n",times));
             options.Add(new ListItem("6. Being demanding of other people.\r\n",times));
             options.Add(new ListItem("7. Assembling Equipment.\r\n",times));
             options.Add(new ListItem("8. Calling on present customers on a regular, routine basis and obtaining repeat sales.\r\n",times));
@@ -86,27 +90,27 @@ namespace JDQA
             options.Add(new ListItem("28. Making large numbers of personal contacts daily.\r\n",times));
             options.Add(new ListItem("29. Being restless and having a high degree of nervous energy and drive, always being on the go.\r\n",times));
             options.Add(new ListItem("30. A good personal appearance at all times.\r\n",times));
-            options.Add(new ListItem("31. Exercising food critical judgement.\r\n",times));
+            options.Add(new ListItem("31. Exercising good critical judgement.\r\n",times));
             options.Add(new ListItem("32. Getting things done promptly.\r\n",times));
             options.Add(new ListItem("33. Being watchful, carefully checking out details.\r\n",times));
             options.Add(new ListItem("34. Being able to break up tense moments with humor or amusing comments.\r\n",times));
             options.Add(new ListItem("35. The ability to communicate well, to get important points across.\r\n",times));
-            options.Add(new ListItem("36. Selling products ot customers who visit stores or showrooms.\r\n",times));
+            options.Add(new ListItem("36. Selling products to customers who visit stores or showrooms.\r\n",times));
             options.Add(new ListItem("37. Being more effective in dealing with people by phone or letter than in person.\r\n",times));
-            options.Add(new ListItem("38. Keeping an orderly account of specific item and/or amounts.\r\n",times));
+            options.Add(new ListItem("38. Keeping an orderly account of specific items and/or amounts.\r\n",times));
             options.Add(new ListItem("39. Making presentations or giving speeches to both large and small groups of people.\r\n",times));
             options.Add(new ListItem("40. Working in a small group of people.\r\n",times));
             options.Add(new ListItem("41. The ability to say no with confidence. \r\n",times));
             options.Add(new ListItem("42. Checking and double checking own work.\r\n",times));
             options.Add(new ListItem("43. An above average level of honesty, confidence and integrity in situations involving the handling of money, valuable \tmaterials or information of a private or secret nature.\r\n",times));
-            options.Add(new ListItem("44. Being calm and controlled when performing tasks.\r\n",times));
+            options.Add(new ListItem("44. Being self-assured and confident when dealing with others.\r\n",times));
             options.Add(new ListItem("45. Being calm and controlled when performing tasks.\r\n",times));
             options.Add(new ListItem("46. The ability to sell intangibles.\r\n",times));
-            options.Add(new ListItem("47. Solving problems through original research and or through investigations of previous work.\r\n",times));
+            options.Add(new ListItem("47. Solving problems through original research and/or through investigations of previous work.\r\n",times));
             options.Add(new ListItem("48. Referring all questionable matters to supervisor.  To go by the book.\r\n",times));
             options.Add(new ListItem("49. A highly persuasive talker.\r\n",times));
             options.Add(new ListItem("50. Doing the same thing over and over.\r\n",times));
-            options.Add(new ListItem("51. Leading meeting in which reliance upon memory and great verbal agility is required.\r\n",times));
+            options.Add(new ListItem("51. Leading meetings in which reliance upon memory and great verbal agility is required.\r\n",times));
             options.Add(new ListItem("52. A very high degree of precision on detailed work.\r\n",times));
             options.Add(new ListItem("53. Little need for accuracy. All work is checked by others.\r\n",times));
             options.Add(new ListItem("54. Performing manual labor tasks of a fairly simple nature.\r\n",times));

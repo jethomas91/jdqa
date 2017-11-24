@@ -70,6 +70,9 @@
     <Compile Include="ProcessShortForm_2.xaml.cs">
       <DependentUpon>ProcessShortForm_2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProcessShortForm_3.xaml.cs">
+      <DependentUpon>ProcessShortForm_3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Results.xaml.cs">
       <DependentUpon>Results.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProcessShortForm_2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProcessShortForm_3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
