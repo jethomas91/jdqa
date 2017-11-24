@@ -74,3 +74,5 @@ C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\bin\Debug\itextsharp.xml
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.csprojResolveAssemblyReference.cache
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm.g.cs
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm.baml
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_2.g.cs
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_2.baml

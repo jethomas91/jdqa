@@ -74,3 +74,5 @@ C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\bin\Release\itextsharp.dll
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\bin\Release\itextsharp.xml
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm.g.cs
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm.baml
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_2.g.cs
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_2.baml
