@@ -17,7 +17,7 @@
             <StackPanel Orientation="Horizontal" Name="checkRow4"></StackPanel>
             <StackPanel Orientation="Horizontal" Name="checkRow5"></StackPanel>
             <StackPanel Orientation="Horizontal" Name="checkRow6"></StackPanel>
-            <Button Name="addMoreReuslts" HorizontalAlignment="Right" Margin="0,10,5,0">Add Another Form Result</Button>
+            <Button Name="addMoreReuslts" HorizontalAlignment="Right" Margin="0,10,5,0" Click="addAnotherForm">Add Another Form Result</Button>
             <Button Name="processFormEntries" HorizontalAlignment="Right" Click="processFormResults" Margin="0,20,5,0">Calculate Ideal Pattern Shape</Button>
         </StackPanel>
     </Grid>

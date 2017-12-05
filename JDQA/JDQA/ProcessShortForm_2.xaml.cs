@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JDQA.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,10 @@ namespace JDQA
     /// </summary>
     public partial class ProcessShortForm_2 : Page
     {
-        public ProcessShortForm_2(List<CheckBox> checkboxList)
+        List<Phase1Selections> Selections;
+        public ProcessShortForm_2(List<CheckBox> checkboxList, List<Phase1Selections> selections)
         {
+            Selections = selections;
             InitializeComponent();
             addSelectedOptions(checkboxList);
         }
@@ -89,7 +92,7 @@ namespace JDQA
                 }
             }
 
-            ProcessShortForm_3 proc3 = new ProcessShortForm_3(selectedBoxes);
+            ProcessShortForm_3 proc3 = new ProcessShortForm_3(selectedBoxes, Selections);
             NavigationService.Navigate(proc3);
         }
     }

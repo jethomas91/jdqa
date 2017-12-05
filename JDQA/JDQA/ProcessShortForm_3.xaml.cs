@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JDQA.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,13 +21,15 @@ namespace JDQA
     /// </summary>
     public partial class ProcessShortForm_3 : Page
     {
-        public ProcessShortForm_3(List<CheckBox> checkboxList)
+        List<Phase1Selections> Selections;
+        public ProcessShortForm_3(List<CheckBox> checkboxList, List<Phase1Selections> selections)
         {
+            Selections = selections;
             InitializeComponent();
-            addSelectedOptions(checkboxList);
+            addSelectedOptions(checkboxList, selections);
         }
 
-        private void addSelectedOptions(List<CheckBox> checkboxList)
+        private void addSelectedOptions(List<CheckBox> checkboxList, List<Phase1Selections> selections)
         {
 
             for (int i = 0; i < checkboxList.Count(); i++)
@@ -69,6 +72,11 @@ namespace JDQA
         private void processFormResults(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Calculating..");
+        }
+
+        private void addAnotherForm(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ProcessShortForm(Selections));
         }
     }
 }

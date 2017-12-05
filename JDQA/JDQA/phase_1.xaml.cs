@@ -29,7 +29,7 @@ namespace JDQA
         }
 
         private void downloadShortForm(object sender, RoutedEventArgs e) {
-            try
+            try 
             {
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.FileName = "phase1_shortform.pdf";
@@ -50,14 +50,14 @@ namespace JDQA
             doc.Add(new Paragraph("Your Title: __________________", times));
             doc.Add(new Paragraph("Today's Date: __________________", times));
 
-                doc.Add(new Paragraph("Are you currently in this position? Yes___ No___"));
-                doc.Add(new Paragraph("Have you ever been in this position? Yes___ No___"));
-                doc.Add(new Paragraph("If No, do you manage this position? Yes___ No___"));
+                doc.Add(new Paragraph("Are you currently in this position? Yes___ No___", times));
+                doc.Add(new Paragraph("Have you ever been in this position? Yes___ No___", times));
+                doc.Add(new Paragraph("If No, do you manage this position? Yes___ No___", times));
             
 
             string formBody = "\r\n Instructions: (1) Place an <X> beside each statement that you feel is important " +
                 "in describing the above position.  (2) Then go back and circle the ten X's which you feel are the most important aspects of the " +
-                "above position. (3) Finally,  DARKEN THE CIRCLE OF THE SINGLE MOST IMPORTANT one. Every words in the statement should match the job requirements \r\n\r\n ";
+                "above position. (3) Finally,  DARKEN THE CIRCLE OF THE SINGLE MOST IMPORTANT one. Note: Every word in the statement must match the job requirements \r\n\r\n ";
             List options = new List(List.UNORDERED);
                 options.SetListSymbol("____ ");
             options.Add(new ListItem("1. Being good at meeting new people quite often.\r\n",times));
@@ -71,22 +71,22 @@ namespace JDQA
             options.Add(new ListItem("9. Following orders precisely.\r\n",times));
             options.Add(new ListItem("10. Readily taking responsibility for making major decisions on a corporate level.\r\n",times));
             options.Add(new ListItem("11. Being able to verbally illustrate points effectively, to be a good speaker.\r\n",times));
-            options.Add(new ListItem("12. Sitting or standing in one spor for most of the day.\r\n",times));
+            options.Add(new ListItem("12. Sitting or standing in one spot for most of the day.\r\n",times));
             options.Add(new ListItem("13. Working with practically no contact with other people.\r\n",times));
             options.Add(new ListItem("14. Inspecting the quality of work being performed by others.\r\n",times));
             options.Add(new ListItem("15. Working from a manual, formula, standard or precise instructions.\r\n",times));
             options.Add(new ListItem("16. Socializing and talking with others easily.\r\n",times));
             options.Add(new ListItem("17. Operating machinery in a careful manner.\r\n",times));
-            options.Add(new ListItem("18. Taking the initiative by seeking out potential customers and opening new accounts by making original sales.\r\n",times));
+            options.Add(new ListItem("18. Taking the initiative by seeking out potential customers and opening new accounts by making original          sales.\r\n",times));
             options.Add(new ListItem("19. Entertaining others.\r\n",times));
             options.Add(new ListItem("20. Designing, creating, inventing or originating new products, ideas, or theories.\r\n",times));
             options.Add(new ListItem("21. Being able to locate source data from reference materials.\r\n",times));
             options.Add(new ListItem("22. Selling products to customers over the counter.\r\n",times));
             options.Add(new ListItem("23. Being happy and likeable at all times to almost everyone.\r\n",times));
-            options.Add(new ListItem("24. Being very considerate in taking care of other people's needs or providing personal service to others.\r\n",times));
+            options.Add(new ListItem("24. Being very considerate in taking care of other people's needs and/or providing personal service to others.\r\n",times));
             options.Add(new ListItem("25. Concentrating on a limited area or on a few items for long periods of time.\r\n",times));
             options.Add(new ListItem("26. Teaching Others. \r\n",times));
-            options.Add(new ListItem("27. Extensive traveling for both long and short periods of time.\r\n",times));
+            options.Add(new ListItem("27. Extensive traveling.\r\n",times));
             options.Add(new ListItem("28. Making large numbers of personal contacts daily.\r\n",times));
             options.Add(new ListItem("29. Being restless and having a high degree of nervous energy and drive, always being on the go.\r\n",times));
             options.Add(new ListItem("30. A good personal appearance at all times.\r\n",times));
@@ -102,11 +102,11 @@ namespace JDQA
             options.Add(new ListItem("40. Working in a small group of people.\r\n",times));
             options.Add(new ListItem("41. The ability to say no with confidence. \r\n",times));
             options.Add(new ListItem("42. Checking and double checking own work.\r\n",times));
-            options.Add(new ListItem("43. An above average level of honesty, confidence and integrity in situations involving the handling of money, valuable \tmaterials or information of a private or secret nature.\r\n",times));
+            options.Add(new ListItem("43. An above average level of honesty, confidence and integrity in situations involving the handling of              money, valuable materials or information of a private, secret, or confidential nature.\r\n",times));
             options.Add(new ListItem("44. Being self-assured and confident when dealing with others.\r\n",times));
             options.Add(new ListItem("45. Being calm and controlled when performing tasks.\r\n",times));
             options.Add(new ListItem("46. The ability to sell intangibles.\r\n",times));
-            options.Add(new ListItem("47. Solving problems through original research and/or through investigations of previous work.\r\n",times));
+            options.Add(new ListItem("47. Solving problems through original research and/or through investigation of previous work.\r\n",times));
             options.Add(new ListItem("48. Referring all questionable matters to supervisor.  To go by the book.\r\n",times));
             options.Add(new ListItem("49. A highly persuasive talker.\r\n",times));
             options.Add(new ListItem("50. Doing the same thing over and over.\r\n",times));
@@ -128,7 +128,7 @@ namespace JDQA
         }
 
         private void processShortForms(object sender, RoutedEventArgs e) {
-            ProcessShortForm processShortForm = new ProcessShortForm();
+            ProcessShortForm processShortForm = new ProcessShortForm(new List<Classes.Phase1Selections>() { });
 
             NavigationService.Navigate(processShortForm);
         }

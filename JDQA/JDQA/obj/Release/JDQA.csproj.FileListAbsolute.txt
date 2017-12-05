@@ -67,7 +67,6 @@ C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.exe
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.pdb
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\Results.g.cs
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\Results.baml
-C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.csprojResolveAssemblyReference.cache
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\phase_1.g.cs
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\phase_1.baml
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\bin\Release\itextsharp.dll
@@ -84,3 +83,6 @@ C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_2.g.cs
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\phase_1.baml
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm.baml
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_2.baml
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_3.g.cs
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_3.baml
+C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.csprojResolveAssemblyReference.cache
