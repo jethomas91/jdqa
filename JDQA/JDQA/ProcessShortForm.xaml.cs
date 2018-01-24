@@ -25,7 +25,8 @@ namespace JDQA
         public ProcessShortForm(List<Phase1Selections> selections)
         {
             InitializeComponent();
-            Selections = selections;
+                Selections = selections;
+                Selections.Add(new Phase1Selections());
             populateGrid();
         }
 
@@ -131,8 +132,10 @@ namespace JDQA
                 parent.UnregisterName(checkbox.Name);
                 parent.Children.Remove(checkbox);
                 if (checkbox.IsChecked.GetValueOrDefault()) {
+                    
                     checkbox.IsChecked = false;
                     selectedBoxes.Add(checkbox);
+                    Selections.Last().stage1.Add(int.Parse(checkbox.Name.Split('_')[1]));
                 }
             }
 

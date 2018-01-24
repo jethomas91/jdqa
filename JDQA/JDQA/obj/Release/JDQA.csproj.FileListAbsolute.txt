@@ -86,3 +86,5 @@ C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_2.baml
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_3.g.cs
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_3.baml
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\JDQA.csprojResolveAssemblyReference.cache
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_3.g.cs
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Release\ProcessShortForm_3.baml

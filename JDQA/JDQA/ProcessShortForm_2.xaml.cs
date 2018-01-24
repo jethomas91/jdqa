@@ -89,6 +89,7 @@ namespace JDQA
                 {
                     checkbox.IsChecked = false;
                     selectedBoxes.Add(checkbox);
+                    Selections.Last().stage2.Add(int.Parse(checkbox.Name.Split('_')[1]));
                 }
             }
 

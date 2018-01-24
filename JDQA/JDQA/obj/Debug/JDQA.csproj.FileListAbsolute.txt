@@ -87,3 +87,4 @@ C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_3.g.cs
 C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_3.baml
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_3.g.cs
 C:\Users\jerom\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\ProcessShortForm_3.baml
+C:\Users\Jet\Documents\GitHub\jdqa\JDQA\JDQA\obj\Debug\JDQA.csprojResolveAssemblyReference.cache

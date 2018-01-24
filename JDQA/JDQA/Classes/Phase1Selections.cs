@@ -11,5 +11,10 @@ namespace JDQA.Classes
         public List<int> stage1;
         public List<int> stage2;
         public int stage3;
+
+        public Phase1Selections() {
+            stage1 = new List<int>();
+            stage2 = new List<int>();
+        }
     }
 }

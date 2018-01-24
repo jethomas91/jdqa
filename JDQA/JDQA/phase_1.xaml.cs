@@ -43,7 +43,9 @@ namespace JDQA
 
                 PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
                 doc.Open();
-        
+                doc.Add(new Paragraph("Job Demands Quotient\r\n\r\n", new Font(bfTimes, 16)));
+
+                doc.Add(new Paragraph("We want to thank you for participating in this exercise to help us better understand the behavioral needs of the job you are performing.This is a great help in the company's effort to make sure that the people hired for the job will MORE CLOSELY FIT THE REQUIREMENTS OF THE JOB. And, that those folks hired will be top performers.  Hopefully, this will continue to ensure the profitability of our company. \r\n\r\n", times));
             //write file
             doc.Add(new Paragraph("Position Being Rated: __________________",times));
             doc.Add(new Paragraph("Your Name: __________________", times));
@@ -56,8 +58,8 @@ namespace JDQA
             
 
             string formBody = "\r\n Instructions: (1) Place an <X> beside each statement that you feel is important " +
-                "in describing the above position.  (2) Then go back and circle the ten X's which you feel are the most important aspects of the " +
-                "above position. (3) Finally,  DARKEN THE CIRCLE OF THE SINGLE MOST IMPORTANT one. Note: Every word in the statement must match the job requirements \r\n\r\n ";
+                "in describing the above position.  (2) Then go back and circle the TEN X's which you feel are the most important aspects of the " +
+                "above position. (3) FINALLY,  DARKEN THE CIRCLE OF THE SINGLE MOST IMPORTANT ONE. \r\n\r\nNote: Every word in the statement must match the job requirements. \r\n\r\n ";
             List options = new List(List.UNORDERED);
                 options.SetListSymbol("____ ");
             options.Add(new ListItem("1. Being good at meeting new people quite often.\r\n",times));
@@ -83,7 +85,7 @@ namespace JDQA
             options.Add(new ListItem("21. Being able to locate source data from reference materials.\r\n",times));
             options.Add(new ListItem("22. Selling products to customers over the counter.\r\n",times));
             options.Add(new ListItem("23. Being happy and likeable at all times to almost everyone.\r\n",times));
-            options.Add(new ListItem("24. Being very considerate in taking care of other people's needs and/or providing personal service to others.\r\n",times));
+            options.Add(new ListItem("24. Being very considerate in taking care of other people's needs and/or providing personal service to \r\n\r\nothers.\r\n",times));
             options.Add(new ListItem("25. Concentrating on a limited area or on a few items for long periods of time.\r\n",times));
             options.Add(new ListItem("26. Teaching Others. \r\n",times));
             options.Add(new ListItem("27. Extensive traveling.\r\n",times));
