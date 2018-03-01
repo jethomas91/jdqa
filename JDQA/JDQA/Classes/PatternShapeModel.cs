@@ -13,12 +13,19 @@ namespace JDQA.Classes
         private double _atc;
         private double _mr;
         private double _sr;
-
+        private int _questionNum;
         public PatternShapeModel(int cq, double atc, double mr, double sr) {
             _ps = cq;
             _atc = atc;
             _mr = mr;
             _sr = sr;  
+        }
+        public PatternShapeModel(int cq, int questionNum) {
+            _ps = cq;
+            _atc = 0;
+            _mr = 0;
+            _sr = 0;
+            _questionNum = questionNum;
         }
 
         public int PS{ get{ return _ps;}}
@@ -27,7 +34,9 @@ namespace JDQA.Classes
 
         public double MR { get { return _mr;} }
 
-        public double SR { get { return SR; } }
+        public double SR { get { return _sr; } }
+
+        public int QuestionNum { get { return _questionNum; } }
 
         public static  Dictionary<string,List<PatternShapeModel>> getPatternShapeModels(Dictionary<string, Dictionary<int, Dictionary<int, int>>> shapeDictionary)
         {

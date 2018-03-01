@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -111,20 +112,25 @@ namespace JDQA
             int entryNum = 1;
 
             string diagText = "";
+
+            List<PatternShapeModel> idealShapes = new List<PatternShapeModel>();
+
             foreach (Phase1Selections selection in  Selections) {
                 diagText+="**************Entry Number "+entryNum+"******************\r\n\r\n";
                 List<PatternShapeModel> patternShapes = new List<PatternShapeModel>() {};
                 foreach (int stage2Val in selection.stage2) {
-                    patternShapes.Add(new PatternShapeModel(QuestionShapeValues.getQuestionValue(stage2Val),0.0,0.0,0.0));
+                    patternShapes.Add(new PatternShapeModel(QuestionShapeValues.getQuestionValue(stage2Val), stage2Val));
                 }
 
-                patternShapes.Add(new PatternShapeModel(QuestionShapeValues.getQuestionValue(selection.stage3), 0.0, 0.0, 0.0));
-                patternShapes.Add(new PatternShapeModel(QuestionShapeValues.getQuestionValue(selection.stage3), 0.0, 0.0, 0.0));
+                patternShapes.Add(new PatternShapeModel(QuestionShapeValues.getQuestionValue(selection.stage3), selection.stage3));
+ //               patternShapes.Add(new PatternShapeModel(QuestionShapeValues.getQuestionValue(selection.stage3), selection.stage3));
 
                 int[] idealjdqa = PatternShapeFunctions.calculateIdealJDQA(patternShapes);
 
-                diagText += "JDQA's to be averaged (Last shape duplicated for darkened circle values):\r\n";
-                diagText += String.Join("\r\n",patternShapes.Select(ps => ps.PS).ToList());
+                idealShapes.Add(new PatternShapeModel(int.Parse(string.Join("", idealjdqa)), 0, 0, 0));
+
+                diagText += "JDQA's to be averaged (Last shape duplicated for darkened circle value):\r\n";
+                diagText += String.Join("\r\n",patternShapes.Select(ps => ps.QuestionNum+": "+ps.PS).ToList());
                 diagText += "\r\nIdeal JDQA:"+string.Join("",idealjdqa)+"\r\n\r\n";
 
 
@@ -132,11 +138,15 @@ namespace JDQA
 
             }
 
+            diagText += "TOTAL IDEAL JDQA: " + string.Join("",PatternShapeFunctions.calculateIdealJDQA(idealShapes));
+
 
             try
             {
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.FileName = "phase1Debug_"+Guid.NewGuid()+ ".txt";
+                sfd.Filter =
+            "Text files (*.txt)|*.txt|All files (*.*)|*.*";
                 sfd.ShowDialog();
 
                 if (sfd.FileName != "") {
@@ -145,6 +155,8 @@ namespace JDQA
                         writer.Write(diagText);
                     };
                 }
+
+                Process.Start(sfd.FileName);
             }
             catch (Exception ex) {
 
